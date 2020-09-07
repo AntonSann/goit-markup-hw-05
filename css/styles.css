@@ -230,6 +230,10 @@ img {
 .button-close {
   position: absolute;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   right: 8px;
   top: 8px;
   color: #000000;
