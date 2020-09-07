@@ -138,7 +138,20 @@ img {
   color: var(--accent-color);
 }
 .link.current {
+  position: relative;
   color: var(--accent-color);
+}
+
+.link.current::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  bottom: 0px;
+  left: 0px;
+
+  background: var(--accent-color);
+  border-radius: 2px;
 }
 
 .site-nav .item {
@@ -275,19 +288,20 @@ img {
 }
 
 .we-do-text {
-  background-color: rgba(47, 48, 58, 0.8);
-  color: var(--white-color);
   position: absolute;
   padding-top: 27px;
   padding-bottom: 27px;
+  width: 370px;
+  bottom: 0;
+  right: 0;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--white-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1, 14;
   text-align: center;
   text-transform: uppercase;
-  width: 370px;
-  bottom: 0;
-  right: 0;
 }
 
 .section.team {
@@ -386,6 +400,8 @@ img {
 .card-text {
   font-size: 16px;
   line-height: 2;
+  color: var(--primary-text-color);
+  text-decoration: none;
 }
 
 .button {
@@ -563,7 +579,35 @@ img {
 .portfolio.item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
+}
+
+.text-hidden {
+  position: relative;
+}
+
+.portfolio-link {
+  width: 370px;
+  text-decoration: none;
+}
+
+.text-comment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 23px;
+
+  opacity: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  color: var(--white-color);
+  font-size: 18px;
+  line-height: 1.56;
+}
+
+.portfolio-link:hover .text-comment,
+.portfolio-link:focus .text-comment {
+  opacity: 1;
 }
 
 footer {
